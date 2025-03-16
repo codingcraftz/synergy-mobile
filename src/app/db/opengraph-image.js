@@ -82,62 +82,6 @@ export default async function Image() {
               납품 가능한 DB
             </h1>
           </div>
-
-          {/* DB Cards Preview */}
-          <div
-            style={{
-              display: "flex",
-              width: "100%",
-              justifyContent: "space-between",
-              marginBottom: "24px",
-            }}
-          >
-            {["프리미엄", "스탠다드", "이코노미"].map((category, index) => (
-              <div
-                key={index}
-                style={{
-                  backgroundColor: index === 0 ? "#fef3c7" : index === 1 ? "#dbeafe" : "#d1fae5",
-                  borderRadius: "8px",
-                  padding: "16px",
-                  width: "30%",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxShadow: "0 2px 4px rgba(0, 0, 0, 0.05)",
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "24px",
-                    fontWeight: "bold",
-                    color: index === 0 ? "#92400e" : index === 1 ? "#1e40af" : "#047857",
-                    marginBottom: "8px",
-                  }}
-                >
-                  {category}
-                </div>
-                <div
-                  style={{
-                    width: "100%",
-                    height: "8px",
-                    backgroundColor: index === 0 ? "#f59e0b" : index === 1 ? "#3b82f6" : "#10b981",
-                    borderRadius: "4px",
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-
-          <div
-            style={{
-              fontSize: "24px",
-              color: "#64748b",
-              textAlign: "center",
-            }}
-          >
-            시너지 그룹에서 제공하는 최신 DB 정보
-          </div>
         </div>
       </div>
     ),
