@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "시너지 모바일 - 2025년 3월 현재 납품 가능한 DB",
+  title: "시너지 그룹 - 2025년 3월 현재 납품 가능한 DB",
   description: "시너지 그룹에서 제공하는 2025년 3월 현재 납품 가능한 DB 정보입니다.",
 };
 

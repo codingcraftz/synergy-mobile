@@ -40,8 +40,8 @@ export default async function Image() {
           <img
             src="https://synergymobile.vercel.app/synergy_logo.png"
             alt="Synergy Logo"
-            width={300}
-            height={80}
+            width={500}
+            height={150}
             style={{
               objectFit: "contain",
               marginBottom: "24px",
@@ -71,7 +71,7 @@ export default async function Image() {
             </h1>
             <h1
               style={{
-                fontSize: "56px",
+                fontSize: "48px",
                 fontWeight: "bold",
                 color: "#0f172a",
                 textAlign: "center",
