@@ -35,7 +35,7 @@ export default function DBPage() {
       name: "시너지 세미방문확정DB",
       price: "140,000원",
       asConditions: ["장기부재", "단박거절", "본인아님", "본인설계사"],
-      longAbsenceCondition: "3일간 오전 오후 각 1통씩 필수 하루에 2통 총 6통이상",
+      longAbsenceCondition: "3일간 오전/오후 각 1통씩 필수, 하루에 2통 총 6통이상",
       features: ["AS 범위가 넓어 사실상 만남이 확정된 DB"],
       category: "premium",
     },
@@ -318,10 +318,13 @@ function DBCard({ db }) {
 
               {db.longAbsenceCondition && (
                 <div className="mt-2 pt-2 border-t border-gray-200">
-                  <p className="text-xs text-gray-600 flex items-center">
-                    <Clock className="w-3 h-3 mr-1 text-blue-400" />
-                    <span className="font-medium">장기부재 조건:</span> {db.longAbsenceCondition}
-                  </p>
+                  <div className="text-xs text-gray-600 flex items-center gap-1">
+                    <div className="flex items-center">
+                      <Clock className="w-3 h-3 mr-1 text-blue-400" />
+                      <span className="font-medium">장기부재 조건:</span>
+                    </div>
+                    <div>{db.longAbsenceCondition}</div>
+                  </div>
                 </div>
               )}
             </div>
