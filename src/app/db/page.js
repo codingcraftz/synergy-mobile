@@ -308,19 +308,6 @@ function DBCard({ db }) {
     }
   };
 
-  const getCompanyLogo = (name) => {
-    if (name.includes("시너지")) {
-      return "/synergy_logo.png";
-    } else if (name.includes("컴패니언")) {
-      return "/companion_logo.png";
-    } else if (name.includes("메타리치") || name.includes("펀다")) {
-      return "/metarich_logo.png";
-    }
-    return null;
-  };
-
-  const logo = getCompanyLogo(db.name);
-
   return (
     <Card
       className="overflow-hidden border-t-4 transition-all duration-300 hover:shadow-lg"
@@ -336,20 +323,7 @@ function DBCard({ db }) {
       <CardHeader className="pb-2">
         <div className="flex justify-between items-start">
           <div>
-            <CardTitle className="text-xl flex items-center gap-2">
-              {logo && (
-                <div className="w-6 h-6 relative flex-shrink-0">
-                  <Image
-                    src={logo}
-                    alt={`${db.name} 로고`}
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                </div>
-              )}
-              {db.name}
-            </CardTitle>
+            <CardTitle className="text-xl flex items-center gap-2">{db.name}</CardTitle>
             <CardDescription className="mt-1">
               <Badge
                 className={`inline-flex items-center px-2 py-1 ${getCategoryColor(db.category)}`}
