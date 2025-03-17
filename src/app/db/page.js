@@ -22,6 +22,7 @@ import {
   Sparkles,
   Clock,
 } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
   title: "시너지 그룹 - 2025년 3월 현재 납품 가능한 DB",
@@ -113,9 +114,23 @@ export default function DBPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-md">
-      <div className="text-center mb-8 animate-fade-in">
-        <h1 className="text-3xl font-bold mb-2 tracking-tight">2025년 3월 현재 납품 가능한 DB</h1>
-        <p className="text-gray-500 font-medium">시너지 그룹에서 제공하는 최신 DB 정보</p>
+      <div className="flex flex-col items-center mb-8 animate-fade-in">
+        <div className="w-48 h-auto mb-4 relative">
+          <Image
+            src="/synergy_logo.png"
+            alt="시너지 그룹 로고"
+            width={200}
+            height={50}
+            className="object-contain"
+            priority
+          />
+        </div>
+        <h1 className="text-3xl font-bold mb-2 tracking-tight text-center">
+          2025년 3월 현재 납품 가능한 DB
+        </h1>
+        <p className="text-gray-500 font-medium text-center">
+          시너지 그룹에서 제공하는 최신 DB 정보
+        </p>
       </div>
 
       <Tabs defaultValue="all" className="w-full mb-6">
@@ -275,6 +290,19 @@ function DBCard({ db }) {
     }
   };
 
+  const getCompanyLogo = (name) => {
+    if (name.includes("시너지")) {
+      return "/synergy_logo.png";
+    } else if (name.includes("컴패니언")) {
+      return "/companion_logo.png";
+    } else if (name.includes("메타리치") || name.includes("펀다")) {
+      return "/metarich_logo.png";
+    }
+    return null;
+  };
+
+  const logo = getCompanyLogo(db.name);
+
   return (
     <Card
       className="overflow-hidden border-t-4 transition-all duration-300 hover:shadow-lg"
@@ -290,7 +318,20 @@ function DBCard({ db }) {
       <CardHeader className="pb-2">
         <div className="flex justify-between items-start">
           <div>
-            <CardTitle className="text-xl">{db.name}</CardTitle>
+            <CardTitle className="text-xl flex items-center gap-2">
+              {logo && (
+                <div className="w-6 h-6 relative flex-shrink-0">
+                  <Image
+                    src={logo}
+                    alt={`${db.name} 로고`}
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
+                </div>
+              )}
+              {db.name}
+            </CardTitle>
             <CardDescription className="mt-1">
               <Badge
                 className={`inline-flex items-center px-2 py-1 ${getCategoryColor(db.category)}`}
@@ -321,7 +362,7 @@ function DBCard({ db }) {
                   <div className="text-xs text-gray-600 flex items-center gap-1">
                     <div className="flex items-center">
                       <Clock className="w-3 h-3 mr-1 text-blue-400" />
-                      <span className="font-medium">장기부재 조건:</span>
+                      <span className="font-medium whitespace-nowrap">장기부재 조건:</span>
                     </div>
                     <div>{db.longAbsenceCondition}</div>
                   </div>
