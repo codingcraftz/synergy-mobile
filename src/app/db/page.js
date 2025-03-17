@@ -246,6 +246,24 @@ export default function DBPage() {
           </div>
         </div>
       </div>
+
+      <footer
+        className="mt-12 pt-6 border-t border-gray-200 flex flex-col items-center animate-fade-in"
+        style={{ animationDelay: "700ms" }}
+      >
+        <div className="w-32 h-auto mb-3">
+          <Image
+            src="/synergy_logo.png"
+            alt="시너지 그룹 로고"
+            width={128}
+            height={32}
+            className="object-contain"
+          />
+        </div>
+        <p className="text-xs text-gray-500 text-center">
+          © {new Date().getFullYear()} 시너지 그룹. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }
