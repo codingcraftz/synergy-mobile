@@ -7,7 +7,7 @@
 
 ### ShadCn components
 - 모든 UI컴포넌트는 ShadCn사용 
-- 컴포넌트 사용전 설치여부 확인 '/components/ui'디렉토리
+- 컴포넌트 사용전 설치여부 확인 '@/components/ui'디렉토리
 - 컴포넌트 사용전 설치 여부 확인
 - 컴포넌트 설치 명령어 사용 'pnpm dlx shadcn@latest add [component-name]'
 - 여러곳에서 사용될법한 컴포넌트는 재사용가능하도록 설계
