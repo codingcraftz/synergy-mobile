@@ -379,10 +379,6 @@ export default function NewEmployeeTraining() {
               </svg>
               카카오톡 문의하기
             </a>
-
-            <button className="bg-white hover:bg-gray-100 text-blue-800 font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105">
-              전화 문의하기
-            </button>
           </div>
         </div>
       </footer>
