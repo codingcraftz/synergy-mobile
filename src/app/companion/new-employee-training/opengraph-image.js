@@ -19,9 +19,10 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(to right, #1e40af, #3b82f6)",
-          color: "white",
+          background: "white",
+          color: "#1e3a8a",
           padding: "40px",
+          fontFamily: "sans-serif",
         }}
       >
         <div
@@ -31,6 +32,7 @@ export default async function Image() {
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
+            width: "90%",
           }}
         >
           <div
@@ -38,17 +40,19 @@ export default async function Image() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: "#eab308",
-              padding: "8px 16px",
-              borderRadius: "20px",
-              marginBottom: "16px",
+              backgroundColor: "#f0f9ff",
+              padding: "12px 24px",
+              borderRadius: "12px",
+              marginBottom: "24px",
+              borderLeft: "6px solid #3b82f6",
             }}
           >
             <p
               style={{
-                fontSize: "20px",
+                fontSize: "28px",
                 fontWeight: "bold",
                 margin: "0",
+                color: "#2563eb",
               }}
             >
               컴패니언 사업부
@@ -57,158 +61,46 @@ export default async function Image() {
 
           <h1
             style={{
-              fontSize: "72px",
+              fontSize: "64px",
               fontWeight: "bold",
               margin: "0",
               marginBottom: "16px",
+              color: "#1e3a8a",
             }}
           >
-            04월 신입교육
+            4월 신입 교육 일정 안내
           </h1>
 
-          <h2
+          <div
             style={{
-              fontSize: "36px",
-              fontWeight: "normal",
-              margin: "0",
+              width: "120px",
+              height: "6px",
+              backgroundColor: "#3b82f6",
               marginBottom: "32px",
-              maxWidth: "800px",
+              borderRadius: "3px",
+            }}
+          />
+
+          <p
+            style={{
+              fontSize: "32px",
+              margin: "0",
+              marginBottom: "24px",
+              color: "#475569",
             }}
           >
             25.04.14~25.04.18 (월~금)
-          </h2>
+          </p>
 
-          <div
+          <p
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              gap: "12px",
-              padding: "24px",
-              backgroundColor: "rgba(255,255,255,0.1)",
-              borderRadius: "12px",
-              marginBottom: "32px",
-              width: "70%",
+              fontSize: "24px",
+              margin: "0",
+              color: "#64748b",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-              }}
-            >
-              <div
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  borderRadius: "50%",
-                  backgroundColor: "#eab308",
-                }}
-              />
-              <p
-                style={{
-                  fontSize: "20px",
-                  margin: "0",
-                }}
-              >
-                5일간 진행 / 10:00~17:00
-              </p>
-            </div>
-
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-              }}
-            >
-              <div
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  borderRadius: "50%",
-                  backgroundColor: "#eab308",
-                }}
-              />
-              <p
-                style={{
-                  fontSize: "20px",
-                  margin: "0",
-                }}
-              >
-                서울시 송파구 위례서로252 208호
-              </p>
-            </div>
-
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-              }}
-            >
-              <div
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  borderRadius: "50%",
-                  backgroundColor: "#eab308",
-                }}
-              />
-              <p
-                style={{
-                  fontSize: "20px",
-                  margin: "0",
-                }}
-              >
-                건물 주차 가능 (현재 무료)
-              </p>
-            </div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              gap: "16px",
-              marginTop: "8px",
-            }}
-          >
-            <p
-              style={{
-                fontSize: "20px",
-                margin: "0",
-                backgroundColor: "#2563eb",
-                padding: "8px 16px",
-                borderRadius: "20px",
-              }}
-            >
-              DB영업
-            </p>
-            <p
-              style={{
-                fontSize: "20px",
-                margin: "0",
-                backgroundColor: "#2563eb",
-                padding: "8px 16px",
-                borderRadius: "20px",
-              }}
-            >
-              화법교육
-            </p>
-            <p
-              style={{
-                fontSize: "20px",
-                margin: "0",
-                backgroundColor: "#2563eb",
-                padding: "8px 16px",
-                borderRadius: "20px",
-              }}
-            >
-              상담노하우
-            </p>
-          </div>
+            서울시 송파구 위례서로252 208호
+          </p>
         </div>
       </div>
     ),
