@@ -27,7 +27,7 @@ export default function NewEmployeeTraining() {
           <div className="flex flex-col space-y-2 mt-4">
             <div className="flex items-center">
               <Calendar className="w-5 h-5 mr-2 text-yellow-300" />
-              <span>5일간 진행 / 10:00~17:00</span>
+              <span>5일간 진행 / 10:00~16:00</span>
             </div>
             <div className="flex items-center">
               <MapPin className="w-5 h-5 mr-2 text-yellow-300" />
@@ -91,32 +91,32 @@ export default function NewEmployeeTraining() {
                   <div className="flex p-4 hover:bg-gray-50">
                     <div className="w-24 flex-shrink-0 font-medium text-blue-700">10:00-12:00</div>
                     <div className="ml-4">
-                      <h3 className="font-bold">사업부별 자체 비대면 OT</h3>
-                      <p className="text-sm text-gray-500 mt-1">입교식 및 교육과정 안내</p>
+                      <h3 className="font-bold">사업부 별 자체 비대면OT</h3>
+                      <p className="text-sm text-gray-500 mt-1">정광구 대표님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
                     <div className="w-24 flex-shrink-0 font-medium text-blue-700">13:00-14:00</div>
                     <div className="ml-4">
-                      <h3 className="font-bold">신입성장 가이드 (보험업계의 이해)</h3>
-                      <p className="text-sm text-gray-500 mt-1">경명구 강사</p>
+                      <h3 className="font-bold">신입 성장 가이드 (보험업계의 이해)</h3>
+                      <p className="text-sm text-gray-500 mt-1">정광구 대표님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
                     <div className="w-24 flex-shrink-0 font-medium text-blue-700">14:00-15:00</div>
                     <div className="ml-4">
-                      <h3 className="font-bold">신입성장 가이드 (for 하이퍼포머)</h3>
-                      <p className="text-sm text-gray-500 mt-1">경명구 강사</p>
+                      <h3 className="font-bold">신입 성장 가이드 (마음가짐 포함)</h3>
+                      <p className="text-sm text-gray-500 mt-1">정광구 대표님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">15:00-17:00</div>
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">15:00-16:00</div>
                     <div className="ml-4">
                       <h3 className="font-bold">DB영업 기본다지기</h3>
-                      <p className="text-sm text-gray-500 mt-1">안인선 강사</p>
+                      <p className="text-sm text-gray-500 mt-1">안인석 지점장님</p>
                     </div>
                   </div>
                 </div>
@@ -139,23 +139,31 @@ export default function NewEmployeeTraining() {
                     <div className="w-24 flex-shrink-0 font-medium text-blue-700">10:00-12:00</div>
                     <div className="ml-4">
                       <h3 className="font-bold">상상을 현실로 만드는 방법</h3>
-                      <p className="text-sm text-gray-500 mt-1">이명길 강사</p>
+                      <p className="text-sm text-gray-500 mt-1">이명길 영업이사님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">13:00-15:00</div>
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">13:00-14:00</div>
                     <div className="ml-4">
                       <h3 className="font-bold">약관해석 및 증권분석 보상사례를 이용한 화법</h3>
-                      <p className="text-sm text-gray-500 mt-1">임현진 강사</p>
+                      <p className="text-sm text-gray-500 mt-1">임현진 프로님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">15:00-17:00</div>
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">14:00-15:00</div>
                     <div className="ml-4">
-                      <h3 className="font-bold">간절한 설계사의 기본기</h3>
-                      <p className="text-sm text-gray-500 mt-1">김윤성 강사</p>
+                      <h3 className="font-bold">기초화법 (메일반)</h3>
+                      <p className="text-sm text-gray-500 mt-1">임현진 프로님</p>
+                    </div>
+                  </div>
+
+                  <div className="flex p-4 hover:bg-gray-50">
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">15:00-16:00</div>
+                    <div className="ml-4">
+                      <h3 className="font-bold">간편한 설계사의 기본기</h3>
+                      <p className="text-sm text-gray-500 mt-1">김윤성 대표님</p>
                     </div>
                   </div>
                 </div>
@@ -177,24 +185,24 @@ export default function NewEmployeeTraining() {
                   <div className="flex p-4 hover:bg-gray-50">
                     <div className="w-24 flex-shrink-0 font-medium text-blue-700">10:00-12:00</div>
                     <div className="ml-4">
-                      <h3 className="font-bold">TA / PC 시작과 끝</h3>
-                      <p className="text-sm text-gray-500 mt-1">김민혁 강사</p>
+                      <h3 className="font-bold">TA/PC 시작과 끝</h3>
+                      <p className="text-sm text-gray-500 mt-1">김민혁 영업이사님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">13:00-15:00</div>
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">13:00-14:00</div>
                     <div className="ml-4">
-                      <h3 className="font-bold">까먹기 싫은 TA화법과 자기소개법</h3>
-                      <p className="text-sm text-gray-500 mt-1">김다행 강사</p>
+                      <h3 className="font-bold">까먹기 쉬운 TA화법과 자가소개법</h3>
+                      <p className="text-sm text-gray-500 mt-1">김다형 영업수석님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">15:00-17:00</div>
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">15:00-16:00</div>
                     <div className="ml-4">
                       <h3 className="font-bold">DB영업 마인드부터 계약까지</h3>
-                      <p className="text-sm text-gray-500 mt-1">윤길상 강사</p>
+                      <p className="text-sm text-gray-500 mt-1">윤길상 영업이사님</p>
                     </div>
                   </div>
                 </div>
@@ -214,34 +222,26 @@ export default function NewEmployeeTraining() {
               <CardContent className="p-0">
                 <div className="divide-y">
                   <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">10:00-11:00</div>
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">10:00-12:00</div>
                     <div className="ml-4">
                       <h3 className="font-bold">신입의 정석</h3>
-                      <p className="text-sm text-gray-500 mt-1">윤길준 강사</p>
+                      <p className="text-sm text-gray-500 mt-1">윤진준 본부장님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">11:00-12:00</div>
-                    <div className="ml-4">
-                      <h3 className="font-bold">자동차보험 기초교육</h3>
-                      <p className="text-sm text-gray-500 mt-1">윤길준 강사</p>
-                    </div>
-                  </div>
-
-                  <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">13:00-15:00</div>
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">13:00-14:00</div>
                     <div className="ml-4">
                       <h3 className="font-bold">어제까지 일반인, 오늘부터 보험전문가?</h3>
-                      <p className="text-sm text-gray-500 mt-1">강현택 강사</p>
+                      <p className="text-sm text-gray-500 mt-1">강현택 SL님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">15:00-17:00</div>
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">15:00-16:00</div>
                     <div className="ml-4">
                       <h3 className="font-bold">모르면 망신당하는 세일즈 포인트</h3>
-                      <p className="text-sm text-gray-500 mt-1">김영빈 강사</p>
+                      <p className="text-sm text-gray-500 mt-1">김영빈 팀장님</p>
                     </div>
                   </div>
                 </div>
@@ -263,24 +263,24 @@ export default function NewEmployeeTraining() {
                   <div className="flex p-4 hover:bg-gray-50">
                     <div className="w-24 flex-shrink-0 font-medium text-blue-700">10:00-12:00</div>
                     <div className="ml-4">
-                      <h3 className="font-bold">보험업 첫 걸음을 위한 필수 상담노하우</h3>
-                      <p className="text-sm text-gray-500 mt-1">윤성환 강사</p>
+                      <h3 className="font-bold">보험업 첫걸음을 위한 필수 상담 노하우</h3>
+                      <p className="text-sm text-gray-500 mt-1">윤성환 지점장님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">13:00-15:00</div>
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">13:00-14:00</div>
                     <div className="ml-4">
                       <h3 className="font-bold">코드네임 '두마리 토끼'</h3>
-                      <p className="text-sm text-gray-500 mt-1">최준용 강사</p>
+                      <p className="text-sm text-gray-500 mt-1">최준호 부지점장님</p>
                     </div>
                   </div>
 
                   <div className="flex p-4 hover:bg-gray-50">
-                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">15:00-17:00</div>
+                    <div className="w-24 flex-shrink-0 font-medium text-blue-700">15:00-16:00</div>
                     <div className="ml-4">
                       <h3 className="font-bold">소개로 만드는 인적 네트워킹</h3>
-                      <p className="text-sm text-gray-500 mt-1">강성무 강사</p>
+                      <p className="text-sm text-gray-500 mt-1">강수우 수석지점장님</p>
                     </div>
                   </div>
                 </div>
@@ -340,7 +340,7 @@ export default function NewEmployeeTraining() {
                 </li>
                 <li className="flex items-start">
                   <span className="w-24 flex-shrink-0 font-medium text-blue-700">교육 시간</span>
-                  <span>10:00~17:00 (점심시간 12:00-13:00)</span>
+                  <span>10:00~16:00 (점심시간 12:00-13:00)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-24 flex-shrink-0 font-medium text-blue-700">참여 대상</span>
@@ -379,6 +379,10 @@ export default function NewEmployeeTraining() {
               </svg>
               카카오톡 문의하기
             </a>
+
+            <button className="bg-white hover:bg-gray-100 text-blue-800 font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105">
+              전화 문의하기
+            </button>
           </div>
         </div>
       </footer>
