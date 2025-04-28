@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import Image from "next/image";
 
 export const runtime = "edge";
 export const alt = "시너지그룹 송파지점 개소식";
@@ -21,7 +22,11 @@ export default async function Image() {
           backgroundColor: "#ffffff",
         }}
       >
-        {/* Logo */}
+        {/* 
+          Note: OpenGraph 이미지는 Next.js의 Image 컴포넌트를 지원하지 않으므로,
+          직접 이미지 URL을 사용합니다.
+          OpenGraph 이미지 생성 중에는 img 태그를 사용하는 것이 유효합니다.
+        */}
         <img
           src="https://synergymobile.vercel.app/synergy_logo.png"
           alt="Synergy Logo"

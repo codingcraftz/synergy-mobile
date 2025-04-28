@@ -12,7 +12,7 @@ export default function FinanceSchoolScreen1() {
           <Badge className="bg-yellow-500 hover:bg-yellow-600">컴패니언 사업부</Badge>
         </div>
         <h2 className="text-xl font-semibold mb-4">
-          최소 100만원에서 최대 1억 이상 벌어가는 '금융스쿨'
+          최소 100만원에서 최대 1억 이상 벌어가는 &apos;금융스쿨&apos;
         </h2>
         <div className="flex items-center text-sm mt-2">
           <Clock className="w-4 h-4 mr-1" />

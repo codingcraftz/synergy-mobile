@@ -33,7 +33,10 @@ export default function FinanceSchoolScreen2() {
               <div className="border-l-4 border-blue-500 pl-4 py-2">
                 <h3 className="font-bold">1교시 (10:50 - 12:00)</h3>
                 <p className="text-sm text-gray-700">윤성환 지점장</p>
-                <p>숨은보험금 찾기(내통장 잔고를 채워주는 '11가지 숨은 보험금 솔루션' part1)</p>
+                <p>
+                  숨은보험금 찾기(내통장 잔고를 채워주는 &apos;11가지 숨은 보험금 솔루션&apos;
+                  part1)
+                </p>
               </div>
 
               <div className="border-l-4 border-yellow-500 pl-4 py-2">
@@ -44,7 +47,7 @@ export default function FinanceSchoolScreen2() {
               <div className="border-l-4 border-blue-500 pl-4 py-2">
                 <h3 className="font-bold">2교시 (13:00 - 14:30)</h3>
                 <p className="text-sm text-gray-700">김윤성 대표님</p>
-                <p>보장분석(필수 5대보장자산으로 '내보험 바로잡기' part1)</p>
+                <p>보장분석(필수 5대보장자산으로 &apos;내보험 바로잡기&apos; part1)</p>
               </div>
             </CardContent>
           </Card>
@@ -69,7 +72,10 @@ export default function FinanceSchoolScreen2() {
               <div className="border-l-4 border-blue-500 pl-4 py-2">
                 <h3 className="font-bold">1교시 (10:50 - 12:00)</h3>
                 <p className="text-sm text-gray-700">윤성환 지점장</p>
-                <p>숨은보험금찾기(내 통장 잔고를 채워주는 '11가지 숨은 보험금 솔루션' part2)</p>
+                <p>
+                  숨은보험금찾기(내 통장 잔고를 채워주는 &apos;11가지 숨은 보험금 솔루션&apos;
+                  part2)
+                </p>
               </div>
 
               <div className="border-l-4 border-yellow-500 pl-4 py-2">
@@ -80,7 +86,7 @@ export default function FinanceSchoolScreen2() {
               <div className="border-l-4 border-blue-500 pl-4 py-2">
                 <h3 className="font-bold">2교시 (13:00 - 14:30)</h3>
                 <p className="text-sm text-gray-700">김윤성 대표님</p>
-                <p>보장분석(필수 5대보정자산으로 '내보험 바로잡기' part2)</p>
+                <p>보장분석(필수 5대보정자산으로 &apos;내보험 바로잡기&apos; part2)</p>
               </div>
             </CardContent>
           </Card>

@@ -1,337 +1,145 @@
 "use client";
 
-import { ThumbsUp, ThumbsDown, AlertCircle } from "lucide-react";
+import { ExternalLink, Info } from "lucide-react";
+import Link from "next/link";
 
 const Step2_2 = () => (
   <div className="space-y-4">
-    <h3 className="text-lg font-semibold">필수앱 설치하기</h3>
-    <p>
-      시너지에서 업무를 원활하게 수행하기 위해 필요한 앱들을 소개합니다. 이 앱들은 일상적인 업무
-      수행에 꼭 필요합니다.
-    </p>
+    <h3 className="text-lg font-semibold">카카오톡 채널 이용</h3>
 
-    <div className="space-y-6">
-      {/* 앱 항목 1 */}
-      <div className="border rounded-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 text-white">
-          <h4 className="font-medium text-lg flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mr-2"
-            >
-              <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
-              <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
-              <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
-            </svg>
-            모바일 뱅킹앱
-          </h4>
-        </div>
-        <div className="p-4">
-          <p className="mb-3">본인 주거래 은행 앱을 필수적으로 설치하세요.</p>
-          <div className="bg-yellow-50 p-3 rounded-md mb-4 border border-yellow-100">
-            <div className="flex items-start">
-              <AlertCircle className="h-5 w-5 text-yellow-500 mr-2 mt-0.5" />
-              <p className="text-sm">
-                <strong>급여계좌 등록을 위해 필요합니다.</strong> 영업활동 중 고객으로부터 받은
-                수수료 또는 보험료 입금을 확인하기 위해서도 필요합니다.
+    <div className="bg-gray-100 p-4 rounded-md">
+      <Link
+        href="https://www.notion.so/1d06d4627c4a80e9a729f9616d1c7c2e?pvs=21"
+        target="_blank"
+        className="text-blue-600 flex items-center gap-1 mb-4"
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+        뒤로가기
+      </Link>
+
+      <blockquote className="border-l-4 border-gray-300 pl-4 py-2 text-gray-700 my-4 italic">
+        <p>
+          자 이렇게 이용을 해도 아직도 뭐가 뭔지 모르시겠고 글 읽는게 너무 힘들고 사람과 소통하고
+          싶고 물어볼 곳이 필요하고 너무나 도움이 필요하다!!!!! 그래서 준비한 문의 창구. 카카오톡
+          채널입니다.
+        </p>
+        <p className="mt-2">
+          수납/위촉/기타등등/도와줘요 → 전부 아래 채널 중 1로 문의 주시면 됩니다.
+        </p>
+      </blockquote>
+    </div>
+
+    <div className="bg-white border rounded-md p-6">
+      <h4 className="text-xl font-bold mb-6">
+        시너지그룹 영업채널은 <span className="text-blue-600">총 4가지</span>입니다.
+      </h4>
+
+      <div className="space-y-6">
+        <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold flex-shrink-0">
+              <span>1</span>
+            </div>
+            <div>
+              <h5 className="font-medium text-blue-800 mb-2">시너지그룹 멤버쉽 (DB관련)</h5>
+              <Link
+                href="http://pf.kakao.com/_Mxnhxhn"
+                target="_blank"
+                className="text-blue-600 inline-flex items-center gap-1 mb-2"
+              >
+                http://pf.kakao.com/_Mxnhxhn <ExternalLink className="h-3 w-3" />
+              </Link>
+              <p className="text-sm text-gray-700">
+                이 채널에서는 DB영업을 하는 분들께 DB배분, 공지 등을 드립니다.
               </p>
             </div>
           </div>
-
-          <div className="grid grid-cols-2 gap-3 mt-4">
-            <a
-              href="https://apps.apple.com/kr/app/kb-%EC%8A%A4%ED%83%80%EB%B1%85%ED%82%B9/id373742138"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-3 flex flex-col items-center justify-center hover:bg-gray-50 transition"
-            >
-              <img
-                src="/files/app_icons/kb.png"
-                alt="KB스타뱅킹"
-                className="w-12 h-12 rounded-xl mb-2"
-              />
-              <span className="text-sm font-medium">KB스타뱅킹</span>
-            </a>
-
-            <a
-              href="https://apps.apple.com/kr/app/%EC%8B%A0%ED%95%9C-sol/id507692946"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-3 flex flex-col items-center justify-center hover:bg-gray-50 transition"
-            >
-              <img
-                src="/files/app_icons/shinhan.png"
-                alt="신한 SOL"
-                className="w-12 h-12 rounded-xl mb-2"
-              />
-              <span className="text-sm font-medium">신한 SOL</span>
-            </a>
-
-            <a
-              href="https://apps.apple.com/kr/app/%EC%9A%B0%EB%A6%AC-woori/id1470704207"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-3 flex flex-col items-center justify-center hover:bg-gray-50 transition"
-            >
-              <img
-                src="/files/app_icons/woori.png"
-                alt="우리 Woori"
-                className="w-12 h-12 rounded-xl mb-2"
-              />
-              <span className="text-sm font-medium">우리 Woori</span>
-            </a>
-
-            <a
-              href="https://apps.apple.com/kr/app/%ED%86%A0%EC%8A%A4/id839333328"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-3 flex flex-col items-center justify-center hover:bg-gray-50 transition"
-            >
-              <img
-                src="/files/app_icons/toss.png"
-                alt="토스"
-                className="w-12 h-12 rounded-xl mb-2"
-              />
-              <span className="text-sm font-medium">토스</span>
-            </a>
-          </div>
         </div>
-      </div>
 
-      {/* 앱 항목 2 */}
-      <div className="border rounded-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-green-500 to-green-600 p-4 text-white">
-          <h4 className="font-medium text-lg flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mr-2"
-            >
-              <path d="m12 19-2 2-2-2"></path>
-              <path d="M4 15a8 8 0 0 0 16 0"></path>
-              <path d="M12 3v14"></path>
-            </svg>
-            시너지그룹 CRM
-          </h4>
-        </div>
-        <div className="p-4">
-          <p className="mb-3">시너지그룹 CRM 앱은 영업활동의 핵심 도구입니다.</p>
-
-          <div className="grid grid-cols-1 gap-3 mb-4">
-            <div className="flex items-start">
-              <ThumbsUp className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-              <div>
-                <p className="font-medium mb-1">주요 기능</p>
-                <ul className="list-disc pl-5 text-sm space-y-1">
-                  <li>계약 현황 확인 및 관리</li>
-                  <li>고객 정보 관리</li>
-                  <li>일정 관리 및 할일 목록</li>
-                  <li>영업 기회 추적</li>
-                  <li>DB 배분 및 관리</li>
-                </ul>
-              </div>
+        <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold flex-shrink-0">
+              <span>2</span>
+            </div>
+            <div>
+              <h5 className="font-medium text-blue-800 mb-2">시너지그룹 오피셜</h5>
+              <Link
+                href="http://pf.kakao.com/_xkxaHMn"
+                target="_blank"
+                className="text-blue-600 inline-flex items-center gap-1 mb-2"
+              >
+                http://pf.kakao.com/_xkxaHMn <ExternalLink className="h-3 w-3" />
+              </Link>
+              <p className="text-sm text-gray-700">
+                이 채널은 고객님들 또한 연락을 주시는 채널입니다. 시너지그룹의 공식 전체 채널이라고
+                봐주시면 됩니다.
+              </p>
             </div>
           </div>
+        </div>
 
-          <div className="border-t border-gray-200 pt-4 mt-2">
-            <a
-              href="https://apps.apple.com/kr/app/%EC%8B%9C%EB%84%88%EC%A7%80-crm/id6450980642"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center p-3 bg-black text-white rounded-md hover:bg-gray-800 transition gap-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+        <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold flex-shrink-0">
+              <span>3</span>
+            </div>
+            <div>
+              <h5 className="font-medium text-blue-800 mb-2">시너지그룹 준법관리</h5>
+              <Link
+                href="http://pf.kakao.com/_mBAxhn"
+                target="_blank"
+                className="text-blue-600 inline-flex items-center gap-1 mb-2"
               >
-                <path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"></path>
-                <path d="M10 2c1 .5 2 2 2 5"></path>
-              </svg>
-              <span>App Store 다운로드</span>
-            </a>
-
-            <a
-              href="https://play.google.com/store/apps/details?id=org.synergygroup.crm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center p-3 bg-blue-500 text-white rounded-md mt-2 hover:bg-blue-600 transition gap-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M3 9v6h4l5 5V4L7 9H3Z"></path>
-                <path d="M15 9.3v5.4"></path>
-                <path d="M18 8v8"></path>
-                <path d="M21 7v10"></path>
-              </svg>
-              <span>Google Play 다운로드</span>
-            </a>
+                http://pf.kakao.com/_mBAxhn <ExternalLink className="h-3 w-3" />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* 앱 항목 3 */}
-      <div className="border rounded-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-4 text-white">
-          <h4 className="font-medium text-lg flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mr-2"
-            >
-              <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-            금융사 필수 앱
-          </h4>
-        </div>
-        <div className="p-4">
-          <p className="mb-3">보험 설계와 가입에 필요한 보험사 앱들입니다.</p>
-
-          <div className="mb-4">
-            <div className="flex items-start mb-3">
-              <ThumbsUp className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-              <div>
-                <p className="font-medium">권장 사항</p>
-                <p className="text-sm">
-                  주요 보험사 앱을 모두 설치해두면 고객 상담 시 유용하게 활용할 수 있습니다.
-                </p>
-              </div>
+        <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold flex-shrink-0">
+              <span>4</span>
             </div>
-
-            <div className="flex items-start">
-              <ThumbsDown className="h-5 w-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
-              <div>
-                <p className="font-medium">주의 사항</p>
-                <p className="text-sm">
-                  법인 휴대폰 사용자는 어플 설치 후 금융사 담당자, 법인 등록 절차를 거쳐야 합니다.
+            <div>
+              <h5 className="font-medium text-blue-800 mb-2">시너지그룹 경영지원</h5>
+              <Link
+                href="http://pf.kakao.com/_DNpMn/chat"
+                target="_blank"
+                className="text-blue-600 inline-flex items-center gap-1 mb-2 font-bold"
+              >
+                http://pf.kakao.com/_DNpMn/chat <ExternalLink className="h-3 w-3" />
+              </Link>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p>수납/위촉/코드/시험/교육/기존 영업지원/교육행정/인사행정에 보냈던 모든내용들</p>
+                <p>
+                  아마 대부분의 궁금하신 내용은 이 채널로 연락을 주시면 해결이 될 것입니다. 가장
+                  자주 이용하실 채널일 거에요 😊
                 </p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div className="grid grid-cols-3 gap-3">
-            <a
-              href="https://apps.apple.com/kr/app/%EC%82%BC%EC%84%B1%ED%99%94%EC%9E%AC-%ED%96%89%EB%B3%B5%EC%84%A0%EC%96%B8/id1141137775"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-2 flex flex-col items-center justify-center hover:bg-gray-50 transition"
-            >
-              <img
-                src="/files/app_icons/samsung.png"
-                alt="삼성화재"
-                className="w-10 h-10 rounded-xl mb-1"
-              />
-              <span className="text-xs font-medium text-center">삼성화재</span>
-            </a>
-
-            <a
-              href="https://apps.apple.com/kr/app/%ED%95%9C%ED%99%94%EC%83%9D%EB%AA%85-%ED%97%AC%EC%8A%A4%EC%95%B1/id1470280163"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-2 flex flex-col items-center justify-center hover:bg-gray-50 transition"
-            >
-              <img
-                src="/files/app_icons/hanwha.png"
-                alt="한화생명"
-                className="w-10 h-10 rounded-xl mb-1"
-              />
-              <span className="text-xs font-medium text-center">한화생명</span>
-            </a>
-
-            <a
-              href="https://apps.apple.com/kr/app/db%EC%83%9D%EB%AA%85-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%95%A4-%EC%9B%B0%EB%8B%88%EC%8A%A4/id1589979372"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-2 flex flex-col items-center justify-center hover:bg-gray-50 transition"
-            >
-              <img
-                src="/files/app_icons/dblife.png"
-                alt="DB생명"
-                className="w-10 h-10 rounded-xl mb-1"
-              />
-              <span className="text-xs font-medium text-center">DB생명</span>
-            </a>
-
-            <a
-              href="https://apps.apple.com/kr/app/%EB%AF%B8%EB%9E%98%EC%97%90%EC%85%8B-%EC%BB%A8%EC%8B%9C%EC%96%B4%EC%A7%80/id1660582882"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-2 flex flex-col items-center justify-center hover:bg-gray-50 transition"
-            >
-              <img
-                src="/files/app_icons/mirae.png"
-                alt="미래에셋"
-                className="w-10 h-10 rounded-xl mb-1"
-              />
-              <span className="text-xs font-medium text-center">미래에셋</span>
-            </a>
-
-            <a
-              href="https://apps.apple.com/kr/app/%EB%A9%94%EB%A6%AC%EC%B8%A0%ED%99%94%EC%9E%AC/id1456675266"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-2 flex flex-col items-center justify-center hover:bg-gray-50 transition"
-            >
-              <img
-                src="/files/app_icons/meritz.png"
-                alt="메리츠화재"
-                className="w-10 h-10 rounded-xl mb-1"
-              />
-              <span className="text-xs font-medium text-center">메리츠화재</span>
-            </a>
-
-            <a
-              href="https://apps.apple.com/kr/app/%EB%A9%94%EB%94%94%EC%B9%B4%EC%86%90%ED%95%B4%EB%B3%B4%ED%97%98/id1547875918"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-2 flex flex-col items-center justify-center hover:bg-gray-50 transition"
-            >
-              <img
-                src="/files/app_icons/medicafire.png"
-                alt="메디카"
-                className="w-10 h-10 rounded-xl mb-1"
-              />
-              <span className="text-xs font-medium text-center">메디카</span>
-            </a>
-          </div>
+      <div className="mt-8 bg-yellow-50 p-4 rounded-md border border-yellow-200">
+        <div className="flex items-start gap-2">
+          <Info className="h-5 w-5 text-yellow-600 mt-0.5" />
+          <p className="text-sm text-yellow-800">
+            <span className="font-bold">중요!</span> 각 채널은 목적에 맞게 사용해 주세요. 특히
+            수납/위촉/코드발급 등의 문의는 반드시 경영지원 채널로 문의해 주세요.
+          </p>
         </div>
       </div>
     </div>
