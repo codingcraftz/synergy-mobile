@@ -204,9 +204,9 @@ export default function Content({
     };
 
     return (
-      <div className="max-w-3xl mx-auto p-4 pt-8 pb-20">
+      <div className="max-w-3xl mx-auto p-3 sm:p-4 pt-6 sm:pt-8 pb-20">
         {/* 환영 메시지 */}
-        <div className="bg-white rounded-lg border p-4 mb-8">
+        <div className="bg-white rounded-lg border p-4 mb-6 sm:mb-8 text-sm sm:text-base">
           <p className="font-medium">안녕하세요!</p>
           <p className="mt-2">입사를 결정해주셔서 진심으로 감사합니다.</p>
           <p className="mt-2">
@@ -222,7 +222,7 @@ export default function Content({
         </div>
 
         {/* 안내 메시지 */}
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-8">
+        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6 sm:mb-8 text-sm sm:text-base">
           <p className="font-medium text-yellow-800">
             사이드바에서 원하는 섹션과 항목을 선택하거나, 하단의 이전/다음 버튼을 사용해 순서대로
             진행하세요.
@@ -233,7 +233,7 @@ export default function Content({
         </div>
 
         {/* 현재 위치 표시 */}
-        <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+        <div className="flex items-center flex-wrap gap-1 sm:gap-2 text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">
           <span>홈</span>
           <ChevronRight className="h-3 w-3" />
           {currentSection && (
@@ -246,141 +246,92 @@ export default function Content({
         </div>
 
         {/* 메인 콘텐츠 */}
-        <div className="bg-white rounded-lg border p-6">
+        <div className="bg-white rounded-lg border p-4 sm:p-6">
           {/* 헤더 */}
-          {currentSection && currentItem && currentItem.content ? (
-            <>
-              <div className="border-b pb-3 mb-6">
-                <div className="flex items-center gap-2">
-                  <Badge
-                    variant="outline"
-                    className={
-                      currentSection.id === "step1"
-                        ? "bg-blue-50 text-blue-600 border-blue-200"
-                        : currentSection.id === "step2"
-                        ? "bg-indigo-50 text-indigo-600 border-indigo-200"
-                        : currentSection.id === "step3"
-                        ? "bg-emerald-50 text-emerald-600 border-emerald-200"
-                        : currentSection.id === "step4"
-                        ? "bg-purple-50 text-purple-600 border-purple-200"
-                        : "bg-red-50 text-red-600 border-red-200"
-                    }
-                  >
-                    {currentSection.title}
-                  </Badge>
-                </div>
-                <h2 className="text-xl font-bold mt-3">{currentItem.title}</h2>
-              </div>
+          <div className="border-b pb-3 mb-4">
+            <Badge
+              className={currentSection?.bgColor || "bg-blue-50"}
+              style={{ color: currentSection?.badgeColor || "inherit" }}
+            >
+              {currentSection?.title || "섹션"}
+            </Badge>
+            <h1 className="text-xl sm:text-2xl font-bold mt-2">{currentItem?.title || "제목"}</h1>
+          </div>
 
-              {/* 콘텐츠 */}
-              <div className="prose max-w-none">
-                {currentItem.content({ copied, copyToClipboard })}
-              </div>
+          {/* 콘텐츠 렌더링 */}
+          <div className="prose prose-sm sm:prose prose-slate max-w-none">
+            {currentItem?.content ? (
+              currentItem.content({ copied, copyToClipboard })
+            ) : (
+              <p>준비 중인 콘텐츠입니다.</p>
+            )}
+          </div>
+        </div>
 
-              {/* 다음/이전 네비게이션 - sections가 전달된 경우만 표시 */}
-              {setActiveItem && (
-                <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-4 border-t">
-                  {hasPrevItem() ? (
-                    <Button
-                      onClick={goToPrevItem}
-                      variant="outline"
-                      className="w-full sm:w-1/2 border-black text-black hover:bg-gray-100 flex items-center justify-center gap-2"
-                    >
-                      <ArrowLeft className="h-4 w-4" />
-                      이전: {getPrevItemTitle()}
-                    </Button>
-                  ) : (
-                    <div className="w-full sm:w-1/2"></div>
-                  )}
-
-                  {hasNextItem() ? (
-                    <Button
-                      onClick={goToNextItem}
-                      className="w-full sm:w-1/2 bg-black text-white hover:bg-gray-800 flex items-center justify-center gap-2"
-                    >
-                      다음: {getNextItemTitle()}
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  ) : (
-                    <div className="w-full sm:w-1/2"></div>
-                  )}
-                </div>
-              )}
-            </>
+        {/* 이전/다음 네비게이션 - 원래 스타일로 복원 */}
+        <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-4 border-t">
+          {hasPrevItem() ? (
+            <Button
+              onClick={goToPrevItem}
+              variant="outline"
+              className="w-full sm:w-1/2 border-gray-300 text-gray-700 hover:bg-gray-100 flex items-center justify-center gap-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span className="truncate">이전: {getPrevItemTitle()}</span>
+            </Button>
           ) : (
-            <div className="py-8 text-center text-gray-500">
-              <p className="mb-2">준비 중인 콘텐츠입니다.</p>
-              <p className="text-sm">왼쪽 메뉴에서 다른 항목을 선택해주세요.</p>
-            </div>
+            <div className="w-full sm:w-1/2"></div>
+          )}
+
+          {hasNextItem() ? (
+            <Button
+              onClick={goToNextItem}
+              className="w-full sm:w-1/2 bg-black text-white hover:bg-gray-800 flex items-center justify-center gap-2"
+            >
+              <span className="truncate">다음: {getNextItemTitle()}</span>
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          ) : (
+            <div className="w-full sm:w-1/2"></div>
           )}
         </div>
 
-        {/* 상단으로 스크롤 버튼 */}
-        <div className="mt-8">
+        {/* 최상단으로 스크롤 버튼 - 간격 추가 */}
+        <div className="mt-10 mb-10">
           <ScrollToTopButton />
         </div>
       </div>
     );
   }
 
-  // section과 item이 직접 전달된 경우의 간소화된 버전
+  // 단일 콘텐츠 사용 사례 (section과 item만 제공된 경우)
   return (
-    <div className="max-w-3xl mx-auto p-4 pt-8 pb-20">
-      {/* 현재 위치 표시 */}
-      <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-        <span>홈</span>
-        <ChevronRight className="h-3 w-3" />
-        {currentSection && (
-          <>
-            <span>{currentSection.title}</span>
-            <ChevronRight className="h-3 w-3" />
-          </>
-        )}
-        {currentItem && <span className="font-medium text-gray-700">{currentItem.title}</span>}
-      </div>
-
+    <div className="max-w-3xl mx-auto p-3 sm:p-4 pt-6 sm:pt-8 pb-20">
       {/* 메인 콘텐츠 */}
-      <div className="bg-white rounded-lg border p-6">
+      <div className="bg-white rounded-lg border p-4 sm:p-6">
         {/* 헤더 */}
-        {currentSection && currentItem && currentItem.content ? (
-          <>
-            <div className="border-b pb-3 mb-6">
-              <div className="flex items-center gap-2">
-                <Badge
-                  variant="outline"
-                  className={
-                    currentSection.id === "step1"
-                      ? "bg-blue-50 text-blue-600 border-blue-200"
-                      : currentSection.id === "step2"
-                      ? "bg-indigo-50 text-indigo-600 border-indigo-200"
-                      : currentSection.id === "step3"
-                      ? "bg-emerald-50 text-emerald-600 border-emerald-200"
-                      : currentSection.id === "step4"
-                      ? "bg-purple-50 text-purple-600 border-purple-200"
-                      : "bg-red-50 text-red-600 border-red-200"
-                  }
-                >
-                  {currentSection.title}
-                </Badge>
-              </div>
-              <h2 className="text-xl font-bold mt-3">{currentItem.title}</h2>
-            </div>
+        <div className="border-b pb-3 mb-4">
+          <Badge
+            className={currentSection?.bgColor || "bg-blue-50"}
+            style={{ color: currentSection?.badgeColor || "inherit" }}
+          >
+            {currentSection?.title || "섹션"}
+          </Badge>
+          <h1 className="text-xl sm:text-2xl font-bold mt-2">{currentItem?.title || "제목"}</h1>
+        </div>
 
-            {/* 콘텐츠 */}
-            <div className="prose max-w-none">
-              {currentItem.content({ copied, copyToClipboard })}
-            </div>
-          </>
-        ) : (
-          <div className="py-8 text-center text-gray-500">
-            <p className="mb-2">준비 중인 콘텐츠입니다.</p>
-            <p className="text-sm">왼쪽 메뉴에서 다른 항목을 선택해주세요.</p>
-          </div>
-        )}
+        {/* 콘텐츠 렌더링 */}
+        <div className="prose prose-sm sm:prose prose-slate max-w-none">
+          {currentItem?.content ? (
+            currentItem.content({ copied, copyToClipboard })
+          ) : (
+            <p>준비 중인 콘텐츠입니다.</p>
+          )}
+        </div>
       </div>
 
-      {/* 상단으로 스크롤 버튼 */}
-      <div className="mt-8">
+      {/* 최상단으로 스크롤 버튼 - 간격 추가 */}
+      <div className="mt-10 mb-10">
         <ScrollToTopButton />
       </div>
     </div>

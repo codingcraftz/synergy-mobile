@@ -1,112 +1,391 @@
 "use client";
 
-import { ExternalLink } from "lucide-react";
+import { Bell, ExternalLink, Info } from "lucide-react";
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
-const Step2_1 = () => (
-  <div className="space-y-4">
-    <h3 className="text-lg font-semibold">신입 단톡방 입장하기</h3>
-    <p>
-      시너지는 공식 오픈채팅방으로 새로운 메이트들을 기다리고 있습니다. 아래 링크를 통해
-      가입해주세요.
-    </p>
+const Step2_1 = () => {
+  const [isPerformanceModalOpen, setIsPerformanceModalOpen] = useState(false);
+  const [isActivityModalOpen, setIsActivityModalOpen] = useState(false);
 
+  return (
     <div className="space-y-5">
-      <div className="p-4 border rounded-lg shadow-sm">
-        <div className="flex items-center space-x-2">
-          <div className="h-10 w-10 bg-yellow-400 rounded-md flex items-center justify-center">
-            <svg
-              width="24"
-              height="22"
-              viewBox="0 0 24 22"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 0C5.37321 0 0 4.23797 0 9.47185C0 12.8141 2.22321 15.7653 5.59018 17.5189C5.33304 18.4618 4.67411 20.9096 4.53348 21.4909C4.35804 22.2203 4.84286 22.2055 5.18839 21.9666C5.45893 21.7795 8.49911 19.6778 9.79554 18.7793C10.5054 18.8677 11.2411 18.9437 12 18.9437C18.6268 18.9437 24 14.7057 24 9.47185C24 4.23797 18.6268 0 12 0Z"
-                fill="black"
-              />
-              <path
-                d="M5.39285 11.0803C4.95535 11.0803 4.60714 10.7321 4.60714 10.2946C4.60714 9.85712 4.95535 9.50891 5.39285 9.50891H11.2143C11.6518 9.50891 12 9.85712 12 10.2946C12 10.7321 11.6518 11.0803 11.2143 11.0803H5.39285ZM12.7857 7.93748C12.3482 7.93748 12 7.58927 12 7.15177C12 6.71427 12.3482 6.36605 12.7857 6.36605H18.6071C19.0446 6.36605 19.3929 6.71427 19.3929 7.15177C19.3929 7.58927 19.0446 7.93748 18.6071 7.93748H12.7857ZM12.7857 11.0803C12.3482 11.0803 12 10.7321 12 10.2946C12 9.85712 12.3482 9.50891 12.7857 9.50891H18.6071C19.0446 9.50891 19.3929 9.85712 19.3929 10.2946C19.3929 10.7321 19.0446 11.0803 18.6071 11.0803H12.7857ZM5.39285 7.93748C4.95535 7.93748 4.60714 7.58927 4.60714 7.15177C4.60714 6.71427 4.95535 6.36605 5.39285 6.36605H11.2143C11.6518 6.36605 12 6.71427 12 7.15177C12 7.58927 11.6518 7.93748 11.2143 7.93748H5.39285Z"
-                fill="#FFE812"
-              />
-            </svg>
-          </div>
-          <div>
-            <h4 className="font-medium text-base">오픈 카카오톡 방</h4>
-            <p className="text-xs text-gray-500">방에 입장하셔서 본인의 이름/근무지를 알려주세요</p>
-          </div>
+      <div>
+        <h2 className="text-xl font-semibold">단톡방 입장</h2>
+      </div>
+
+      <div className="bg-indigo-50 p-3 sm:p-4 rounded-md">
+        <p className="text-xs sm:text-sm italic">
+          시너지그룹은 원활한 소통과 업무에 도움이 되는 정보 공유를 위해 많은 단톡방이
+          활성화되어있습니다! 그래서 처음 오시는 분들은 많은 단톡방에 혼란스러워 하실 수 있는데요.
+          이 페이지에서 깔끔하게 정리를 해드릴게요! 참고 부탁드려요!
+        </p>
+      </div>
+
+      <div className="border rounded-md overflow-hidden">
+        <div className="bg-yellow-50 p-3 sm:p-4 border-b">
+          <h3 className="font-medium flex items-center gap-2 text-sm sm:text-base">
+            <span className="text-yellow-600 text-lg sm:text-xl">⭐</span>
+            공통 공지&규정
+          </h3>
         </div>
 
-        <a
-          href="https://open.kakao.com/o/gvShvQhf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 flex items-center justify-between p-3 bg-gray-50 border rounded-md text-sm text-gray-700 hover:bg-gray-100 transition-colors"
-        >
-          <span className="font-medium">시너지그룹 신입메이트 오픈채팅방</span>
-          <ExternalLink className="h-4 w-4" />
-        </a>
+        <div className="p-3 sm:p-4 space-y-3">
+          <div className="flex items-start gap-2">
+            <div className="w-1 h-1 rounded-full bg-gray-500 mt-2"></div>
+            <div className="text-sm sm:text-base">
+              <p>
+                <span className="font-medium">닉네임양식</span> -{" "}
+                <strong>ㅇㅇㅇ 프로/ㅇㅇㅇ지점</strong> 통일
+              </p>
+              <p className="text-xs sm:text-sm text-gray-600">
+                이름과 직급 사이에 띄어쓰기 주의해주세요. ㅇㅇㅇV프로
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <div className="w-1 h-1 rounded-full bg-gray-500 mt-2"></div>
+            <div className="text-sm sm:text-base">
+              <p>
+                참여코드 개별문의로 되어있는 단톡방은
+                <a
+                  href="http://pf.kakao.com/_DNpMn/chat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 inline-flex items-center gap-1 mx-1"
+                >
+                  <strong>카카오톡 경영지원팀</strong>
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+                으로 문의 주세요
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="bg-yellow-50 p-4 rounded-md border border-yellow-100">
-        <h4 className="font-semibold flex items-center gap-1 mb-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-yellow-600"
-          >
-            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-            <line x1="12" x2="12" y1="9" y2="13"></line>
-            <line x1="12" x2="12.01" y1="17" y2="17"></line>
-          </svg>
-          단톡방 이용 시 주의사항
-        </h4>
-        <ul className="list-disc pl-5 space-y-1 text-sm">
-          <li>
-            <strong>입장 후 본인 이름과 근무지점을 꼭 공유해주세요.</strong>
-          </li>
-          <li>비즈니스 환경에 맞는 예의와 존중을 지켜주세요.</li>
-          <li>질문과 도움 요청은 언제든지 환영합니다.</li>
-          <li>회사 정보 및 개인정보 유출에 주의해주세요.</li>
-        </ul>
-      </div>
+      <div className="border rounded-md overflow-hidden">
+        <div className="bg-yellow-50 p-3 sm:p-4 border-b">
+          <h3 className="font-medium flex items-center gap-2 text-sm sm:text-base">
+            <span className="text-yellow-600 text-lg sm:text-xl">⭐</span>
+            반드시 들어와야 하는 단톡방 - 전체방/정보방/지역별 사무실 방
+          </h3>
+        </div>
 
-      <div className="p-4 bg-blue-50 rounded-md border border-blue-100">
-        <div className="flex items-start gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-blue-500"
-          >
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" x2="12" y1="8" y2="12"></line>
-            <line x1="12" x2="12.01" y1="16" y2="16"></line>
-          </svg>
-          <div>
-            <h4 className="font-medium">단톡방은 신입메이트의 가장 빠른 정보창구입니다!</h4>
-            <p className="text-sm mt-1">
-              시너지그룹의 최신 소식, 중요 공지사항, 경력자들의 노하우 등 많은 정보를 얻을 수 있는
-              공간입니다. 적극적으로 참여하셔서 성장의 발판으로 삼으세요!
+        <div className="p-3 sm:p-4 space-y-4">
+          <div className="border rounded-lg p-4 sm:p-5 bg-gray-50">
+            <div className="flex items-start gap-2 sm:gap-3 mb-3">
+              <Bell className="h-5 w-5 sm:h-6 sm:w-6 text-gray-700 flex-shrink-0 mt-0.5 sm:mt-1" />
+              <h4 className="text-base sm:text-lg font-medium">컴패니언 사업부 전체 단톡방</h4>
+            </div>
+
+            <a
+              href="https://open.kakao.com/o/gp307Gxf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 flex items-center gap-1 mb-2 text-sm sm:text-base break-all"
+            >
+              https://open.kakao.com/o/gp307Gxf
+              <ExternalLink className="h-3 w-3 flex-shrink-0" />
+            </a>
+
+            <p className="font-medium mb-2 text-sm sm:text-base">참여코드 3131</p>
+
+            <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-2 text-xs sm:text-sm">
+              <li>이 단톡방은 모든 컴패니언 사업부 인원이 참여하는 단톡방입니다.</li>
+              <li>
+                사업부 전체 주요 공지, 인별 계약 현황, 계약 보고, 우수 활동 보고, 진급 공지 등
+                총괄적인 모든 내용이 올라온다고 보시면 됩니다.
+              </li>
+              <li>
+                본인의 관리자가 <strong>'전체방에 올려'</strong> 라고 하면 여기에 올리시면 됩니다.
+              </li>
+            </ul>
+
+            <div className="mt-3 p-3 bg-white rounded-md border">
+              <p className="font-medium mb-2 text-xs sm:text-sm">
+                처음 입장시 아래의 양식을 작성해주세요!
+              </p>
+              <ol className="list-decimal pl-4 sm:pl-5 space-y-1 text-xs sm:text-sm">
+                <li>이름</li>
+                <li>지역/출근</li>
+                <li>소속</li>
+                <li>유치자</li>
+                <li>상위지점장</li>
+                <li>앞으로의포부</li>
+              </ol>
+            </div>
+
+            <div className="mt-3 space-y-2">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="text-blue-600 flex items-center gap-1 text-xs sm:text-sm">
+                    실적보고 올리는 방법 [Click!]
+                    <ExternalLink className="h-3 w-3" />
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-center">실적보고 올리는 방법</DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4 mt-4">
+                    <p className="text-xs sm:text-sm">
+                      아래 양식을 그대로 복사하시고 지점/계약유형/본인 이름/유치자 이름/계약한 회사
+                      상품명 보험료/ 건수/ 총 보험료/. 수납일 / 월 누적 보험료 및 건수를 수정해서
+                      사용하세요
+                    </p>
+
+                    <div className="bg-gray-50 p-3 rounded-md border border-gray-200 text-xs font-mono whitespace-pre-wrap">
+                      {`─────────────
+메타리치 컴패니언 사업부
+동행지점                          
+𝐂𝐞𝐥𝐞𝐛𝐫𝐚𝐭𝐢𝐨𝐧 𝐂𝐨𝐧𝐭𝐫𝐚𝐜𝐭
+─────────────
+계약유형: 지인고객님💕
+─────────────
+▪️ 이지우 프로
+─────────────
+▪️ 유치자: 김윤성대표님
+─────────────
+▪️삼성화재 간편보험 34,257원
+▪️흥국화재 건강보험 73,308원
+총 2건 107,565원
+─────────────
+▪️수납일 : 2024.11.14(목)
+─────────────
+▪️총 누적 월납 보험료 : 107,565원
+─────────────
+▪️총 월 누적 건수 : 2건
+─────────────
+💎 수납 완료 입니다💎
+─────────────`}
+                    </div>
+
+                    <div className="bg-yellow-50 p-3 rounded-md border border-yellow-200">
+                      <h4 className="font-medium mb-2">계약 유형 종류</h4>
+                      <ul className="text-xs space-y-1">
+                        <li>시너지 DB고객</li>
+                        <li>컴패니언 DB고객</li>
+                        <li>무료화재보험 DB고객</li>
+                        <li>AI네이버 DB고객</li>
+                        <li>펀다대출 DB고객</li>
+                        <li>펫사랑멤버쉽 DB고객</li>
+                        <li>신밧드유튜브 DB고객</li>
+                        <li>온라인카페 고객</li>
+                        <li>온라인지식인 고객</li>
+                        <li>온라인 유튜브 고객</li>
+                        <li>보험라운지 고객</li>
+                        <li>인하우스 고객</li>
+                        <li>지인고객</li>
+                        <li>지인 소개고객</li>
+                        <li>DB 소개고객</li>
+                        <li>인하우스 소개고객</li>
+                        <li>기타 소개고객</li>
+                      </ul>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="text-blue-600 flex items-center gap-1 text-xs sm:text-sm">
+                    우수 활동 점수 보고 하는 방법 [Click!]
+                    <ExternalLink className="h-3 w-3" />
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-center">우수 활동 점수 보고 하는 방법</DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4 mt-4">
+                    <p className="text-xs sm:text-sm">
+                      <strong>
+                        고객과 상담하는 사진 타임스탬프로 찍고 아래형식과 함께 타임스탬프 사진과
+                        같이 올리기
+                      </strong>
+                    </p>
+
+                    <p className="text-xs italic">
+                      점수는 고객 신체부위가 내얼굴이 같이나오면 0.5점 고객과 같이 얼굴이 찍혀서
+                      나오면 1점(고객요청시 얼굴모자이크처리해도됨) <strong>주말엔 2배</strong>점수
+                    </p>
+
+                    <div className="bg-gray-50 p-3 rounded-md border border-gray-200 text-xs font-mono whitespace-pre-wrap">
+                      {`우수 활동점수 보고 
+------------------- 
+홍길동 프로 
+------------------- 
+2025.04.09(수) 
+-------------------- 
+시너지DB기고객님 1점 
+-------------------- 
+어떤 목적으로 만나고 어떤이야기를했는지 상담일지작성
+-----------‐---------  
+총 00점`}
+                    </div>
+
+                    <div className="space-y-3">
+                      <h4 className="font-medium text-sm">예시 이미지</h4>
+                      <div className="grid grid-cols-1 gap-4">
+                        <Image
+                          src="/files/우수_활동점수_예시_1.png"
+                          alt="우수 활동점수 예시 1"
+                          width={300}
+                          height={300}
+                          className="rounded-md border w-full h-auto"
+                        />
+                        <Image
+                          src="/files/우수_활동점수_예시_2.png"
+                          alt="우수 활동점수 예시 2"
+                          width={300}
+                          height={300}
+                          className="rounded-md border w-full h-auto"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </div>
+          </div>
+
+          <div className="border rounded-lg p-4 sm:p-5 bg-gray-50">
+            <div className="flex items-start gap-2 sm:gap-3 mb-3">
+              <Bell className="h-5 w-5 sm:h-6 sm:w-6 text-gray-700 flex-shrink-0 mt-0.5 sm:mt-1" />
+              <h4 className="text-base sm:text-lg font-medium">컴패니언 사업부 정보공유방</h4>
+            </div>
+
+            <a
+              href="https://open.kakao.com/o/gcDcajGg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 flex items-center gap-1 mb-2 text-sm sm:text-base break-all"
+            >
+              https://open.kakao.com/o/gcDcajGg
+              <ExternalLink className="h-3 w-3 flex-shrink-0" />
+            </a>
+
+            <p className="font-medium mb-2 text-sm sm:text-base">참여코드 8221</p>
+
+            <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-2 text-xs sm:text-sm">
+              <li>
+                이 단톡방에서는 매달의 소식지, 상품 정보, 영업 시 도움이 되는 다양한 보험 정보가
+                실시간으로 올라옵니다.
+              </li>
+              <li>사담은 금지이며, 정보를 올려주신 분께 하트 이모지는 매너 ❤️</li>
+            </ul>
+          </div>
+
+          <div className="border rounded-lg p-4 sm:p-5 bg-gray-50">
+            <div className="flex items-start gap-2 sm:gap-3 mb-3">
+              <Bell className="h-5 w-5 sm:h-6 sm:w-6 text-gray-700 flex-shrink-0 mt-0.5 sm:mt-1" />
+              <h4 className="text-base sm:text-lg font-medium">소속 지점/사무실 단톡방</h4>
+            </div>
+
+            <ul className="list-disc pl-4 sm:pl-5 space-y-2 sm:space-y-3 text-xs sm:text-sm">
+              <li>
+                <span className="font-medium">수도권 (서초·송파)</span> -
+                <a
+                  href="https://open.kakao.com/o/g39omzEf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 inline-flex items-center gap-1 ml-1 break-all"
+                >
+                  https://open.kakao.com/o/g39omzEf
+                  <ExternalLink className="h-3 w-3 flex-shrink-0" />
+                </a>
+                <p className="text-gray-600">(참여코드 개별문의)</p>
+              </li>
+              <li>
+                <span className="font-medium">양산지점</span> -
+                <a
+                  href="https://open.kakao.com/o/gGVlO1lf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 inline-flex items-center gap-1 ml-1 break-all"
+                >
+                  https://open.kakao.com/o/gGVlO1lf
+                  <ExternalLink className="h-3 w-3 flex-shrink-0" />
+                </a>
+                <p className="text-gray-600">(참여코드 개별문의)</p>
+              </li>
+              <li>
+                <span className="font-medium">제주지점</span> -
+                <a
+                  href="https://open.kakao.com/o/gUkyisRg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 inline-flex items-center gap-1 ml-1 break-all"
+                >
+                  https://open.kakao.com/o/gUkyisRg
+                  <ExternalLink className="h-3 w-3 flex-shrink-0" />
+                </a>
+                <p className="text-gray-600">(참여코드 개별문의)</p>
+              </li>
+            </ul>
+
+            <p className="mt-3 text-xs sm:text-sm">
+              → 자신이 소속된 지점/지역별 사무실 단톡방으로, 함께 출퇴근하는 인원들끼리의 공지 확인
+              방이라고 봐주시면 됩니다!
             </p>
           </div>
         </div>
       </div>
+
+      <div className="border rounded-md overflow-hidden">
+        <div className="bg-yellow-50 p-3 sm:p-4 border-b">
+          <h3 className="font-medium flex items-center gap-2 text-sm sm:text-base">
+            <span className="text-yellow-600 text-lg sm:text-xl">⭐</span>
+            DB영업 해당할 시 들어와야할 단톡
+          </h3>
+        </div>
+
+        <div className="p-3 sm:p-4">
+          <div className="border rounded-lg p-4 sm:p-5 bg-gray-50">
+            <div className="flex items-start gap-2 sm:gap-3 mb-3">
+              <Bell className="h-5 w-5 sm:h-6 sm:w-6 text-gray-700 flex-shrink-0 mt-0.5 sm:mt-1" />
+              <h4 className="text-base sm:text-lg font-medium">컴패니언 DB코칭방</h4>
+            </div>
+
+            <a
+              href="https://open.kakao.com/o/gdOhmQDf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 flex items-center gap-1 mb-2 text-sm sm:text-base break-all"
+            >
+              https://open.kakao.com/o/gdOhmQDf
+              <ExternalLink className="h-3 w-3 flex-shrink-0" />
+            </a>
+
+            <p className="font-medium mb-2 text-sm sm:text-base">
+              참여코드 - 입장 해당 시 개별문의
+            </p>
+
+            <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-2 text-xs sm:text-sm">
+              <li>
+                이 단톡방은 DB를 받는 컴패니언 사업부 인원들 중, DB를 받고 DB영업을 진행하는 분들이
+                들어오는 방입니다
+              </li>
+              <li>DB고객과의 통화 녹취 업로드 및 피드백 (DB보고) 을 업로드 합니다.</li>
+              <li>
+                녹취파일, 통화목록 캡처화면에 고객의 연락처 정보가 보이지 않도록 조치 후
+                업로드해주세요.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Step2_1;

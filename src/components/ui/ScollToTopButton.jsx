@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 export function ScrollToTopButton() {
   const handleScrollToTop = () => {
@@ -10,12 +10,12 @@ export function ScrollToTopButton() {
   return (
     <button
       onClick={handleScrollToTop}
-      className="p-3 rounded-lg border hover:border-blue-300 hover:bg-blue-50 flex items-center gap-3 transition-colors w-full"
+      className="flex items-center justify-center w-full py-3 rounded-full border border-gray-200 bg-white hover:border-blue-300 hover:bg-blue-50 transition-colors shadow-sm"
     >
-      <div className="flex-shrink-0">
-        <MapPin className="h-5 w-5 text-gray-600" />
+      <div className="flex items-center gap-2">
+        <ArrowUp className="h-4 w-4 text-gray-600" />
+        <span className="font-medium text-sm text-gray-700">맨 위로 가기</span>
       </div>
-      <span className="font-medium">▲TOP</span>
     </button>
   );
 }

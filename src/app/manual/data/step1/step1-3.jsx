@@ -68,7 +68,6 @@ const Step1_3 = () => (
               className="object-contain"
             />
           </div>
-          <p className="text-xs text-gray-600 mt-2 text-center">서울보증보험 앱을 설치하세요</p>
         </div>
 
         <div className="border rounded-md p-2 bg-white">
@@ -85,9 +84,6 @@ const Step1_3 = () => (
               className="object-contain"
             />
           </div>
-          <p className="text-xs text-gray-600 mt-2 text-center">
-            앱 실행 후 비대면 동의를 클릭하세요
-          </p>
         </div>
 
         <div className="border rounded-md p-2 bg-white">
@@ -99,7 +95,6 @@ const Step1_3 = () => (
           <div className="aspect-[9/16] relative bg-gray-100 flex items-center justify-center">
             <Image src="/files/선조회_3.jpg" alt="신원정보 입력" fill className="object-contain" />
           </div>
-          <p className="text-xs text-gray-600 mt-2 text-center">신원정보를 정확하게 입력하세요</p>
         </div>
 
         <div className="border rounded-md p-2 bg-white">
@@ -111,7 +106,6 @@ const Step1_3 = () => (
           <div className="aspect-[9/16] relative bg-gray-100 flex items-center justify-center">
             <Image src="/files/선조회_4.jpg" alt="모든 항목 동의" fill className="object-contain" />
           </div>
-          <p className="text-xs text-gray-600 mt-2 text-center">모든 항목에 동의해주세요</p>
         </div>
 
         <div className="border rounded-md p-2 bg-white md:col-span-2">
@@ -123,9 +117,6 @@ const Step1_3 = () => (
           <div className="aspect-[9/16] md:aspect-[16/9] relative bg-gray-100 flex items-center justify-center">
             <Image src="/files/선조회_5.jpg" alt="완료 확인" fill className="object-contain" />
           </div>
-          <p className="text-xs text-gray-600 mt-2 text-center">
-            완료 후 경영지원팀에 동의 완료 사실을 알려주세요
-          </p>
         </div>
       </div>
     </div>
