@@ -36,68 +36,117 @@ const Step3_1 = ({ copied, copyToClipboard }) => {
             <div className="flex gap-2 items-start">
               <AlertTriangle className="h-5 w-5 text-yellow-600 flex-shrink-0 mt-0.5" />
               <div>
-                <h5 className="font-medium">아이디 신청 안내</h5>
+                <h5 className="font-medium">가입 안내</h5>
                 <p className="text-sm mt-1">
-                  FP파트너즈 가입을 위해서는 시너지그룹 경영지원팀을 통해 아이디를 신청해야 합니다.
+                  FP파트너즈 가입은 공식 홈페이지를 통해 직접 진행할 수 있습니다.
                 </p>
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h5 className="font-medium">시너지그룹 경영지원팀 카카오톡 채널로 문의하세요</h5>
+            <h5 className="font-medium">FP파트너즈 공식 홈페이지 방문</h5>
 
             <div className="border p-3 rounded-md">
               <div className="flex items-center gap-2 mb-2">
-                <RiKakaoTalkFill className="text-lg text-[#391B1B]" />
-                <h6 className="font-medium">시너지그룹 경영지원팀 카카오톡 채널</h6>
+                <ExternalLink className="h-5 w-5 text-indigo-600" />
+                <h6 className="font-medium">FP파트너즈 공식 홈페이지</h6>
               </div>
               <a
-                href="http://pf.kakao.com/_DNpMn/chat"
+                href="https://www.fppartners.co.kr/join/join_step01.jsp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 inline-flex items-center gap-1"
               >
-                http://pf.kakao.com/_DNpMn/chat
+                https://www.fppartners.co.kr
                 <ExternalLink className="h-3 w-3" />
               </a>
             </div>
 
             <div className="bg-gray-50 p-4 rounded-md">
-              <h6 className="font-medium mb-2">신청 시 필요한 정보</h6>
+              <h6 className="font-medium mb-2">가입 시 필요한 정보</h6>
               <ul className="list-disc pl-5 space-y-2 text-sm">
                 <li>
-                  <span className="font-medium">희망 아이디</span>
+                  <span className="font-medium">개인정보</span>
                   <p className="text-gray-600 text-xs mt-0.5">
-                    원하는 아이디를 2-3개 정도 작성해주세요
+                    이름, 생년월일, 성별, 휴대폰 번호, 이메일 등 기본 정보
                   </p>
                 </li>
                 <li>
-                  <span className="font-medium">이름(실명)</span>
+                  <span className="font-medium">설계사 정보</span>
+                  <p className="text-gray-600 text-xs mt-0.5">
+                    소속 GA명, 사원번호, 모집인 등록번호 등
+                  </p>
                 </li>
                 <li>
-                  <span className="font-medium">이메일</span>
+                  <span className="font-medium">본인인증</span>
                   <p className="text-gray-600 text-xs mt-0.5">
-                    실제 사용 중인 이메일을 정확히 작성해주세요
+                    휴대폰 또는 공동인증서를 통한 본인인증 필요
                   </p>
                 </li>
               </ul>
             </div>
 
-            <div className="p-4 border rounded-md bg-indigo-50">
-              <div className="flex items-start gap-2">
-                <RiKakaoTalkFill className="text-lg text-[#391B1B] mt-0.5" />
-                <div>
-                  <h6 className="font-medium">카카오톡 메시지 작성 예시</h6>
-                  <p className="text-sm mt-1 text-gray-700">
-                    안녕하세요, FP파트너즈 아이디 신청합니다.
-                    <br />
-                    희망아이디: synergy123, synergykim (2개 중 가능한 것으로)
-                    <br />
-                    이름: 홍길동
-                    <br />
-                    이메일: example@gmail.com
+            <div className="p-4 border rounded-md">
+              <h6 className="font-medium mb-2">가입 절차</h6>
+              <ol className="list-decimal pl-5 space-y-3 text-sm">
+                <li>
+                  <span className="font-medium">홈페이지 접속</span>
+                  <p className="text-gray-600 text-xs mt-0.5">
+                    FP파트너즈 공식 홈페이지(www.fppartners.co.kr)에 접속합니다.
                   </p>
+                </li>
+                <li>
+                  <span className="font-medium">회원가입 클릭</span>
+                  <p className="text-gray-600 text-xs mt-0.5">
+                    메인 페이지 상단 메뉴에서 '회원가입'을 클릭합니다.
+                  </p>
+                </li>
+                <li>
+                  <span className="font-medium">약관 동의</span>
+                  <p className="text-gray-600 text-xs mt-0.5">
+                    이용약관, 개인정보 수집 및 이용 동의 등 필수 약관에 동의합니다.
+                  </p>
+                </li>
+                <li>
+                  <span className="font-medium">본인인증</span>
+                  <p className="text-gray-600 text-xs mt-0.5">
+                    휴대폰 또는 공동인증서를 통해 본인인증을 진행합니다.
+                  </p>
+                </li>
+                <li>
+                  <span className="font-medium">정보 입력</span>
+                  <p className="text-gray-600 text-xs mt-0.5">
+                    필요한 개인정보 및 설계사 정보를 정확히 입력합니다.
+                  </p>
+                </li>
+                <li>
+                  <span className="font-medium">가입 완료</span>
+                  <p className="text-gray-600 text-xs mt-0.5">
+                    모든 정보를 입력하고 가입을 완료합니다.
+                  </p>
+                </li>
+              </ol>
+            </div>
+
+            <div className="bg-indigo-50 p-4 rounded-md">
+              <div className="flex items-start gap-2">
+                <AlertTriangle className="h-5 w-5 text-indigo-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h6 className="font-medium">도움이 필요하신가요?</h6>
+                  <p className="text-sm mt-1 text-gray-700">
+                    가입 과정에서 도움이 필요하시면 시너지그룹 경영지원팀 카카오톡 채널로
+                    문의해주세요.
+                  </p>
+                  <a
+                    href="http://pf.kakao.com/_DNpMn/chat"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 inline-flex items-center gap-1 mt-2 text-sm"
+                  >
+                    카카오톡 경영지원팀 문의하기
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
                 </div>
               </div>
             </div>

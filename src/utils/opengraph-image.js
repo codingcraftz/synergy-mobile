@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
-import Image from "next/image";
+// Image 컴포넌트를 사용하지 않으므로 임포트 제거
+// import Image from "next/image";
 
 export const runtime = "edge";
 export const alt = "시너지그룹 송파지점 개소식";
@@ -9,7 +10,8 @@ export const size = {
 };
 export const contentType = "image/png";
 
-export default async function Image() {
+// 함수 이름을 OGImage로 변경
+export default async function OGImage() {
   return new ImageResponse(
     (
       <div
