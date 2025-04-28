@@ -1,103 +1,78 @@
-import Image from "next/image";
+import Main from "@/components/Main";
+import KakaoMap from "@/components/Map";
+import Message from "@/components/Message";
+import Information from "@/components/Information";
+import WeddingCalendar from "@/components/WeddingCalendar";
+
+export const metadata = {
+	title: "개소식 초대장",
+	description: "메타리치 컴패니언 사업부 개소식 초대장",
+	openGraph: {
+		title: "초대합니다.",
+		description: "메타리치 컴패니언 사업부 개소식에 초대합니다.",
+		url: "https://synergymobile.vercel.app/",
+		type: "website",
+		images: [
+			{
+				url: "https://opengraph.b-cdn.net/production/images/821547a8-96e0-4699-b8f0-b0c2e932446d.png",
+				width: 1200,
+				height: 630,
+				alt: "개소식 초대장",
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "초대합니다.",
+		description: "메타리치 컴패니언 사업부 개소식에 초대합니다.",
+		images: ["https://opengraph.b-cdn.net/production/images/821547a8-96e0-4699-b8f0-b0c2e932446d.png"],
+	},
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+	return (
+		<div className="flex flex-col min-h-screen max-w-screen-sm mx-auto bg-[#f7f6f1] shadow-md">
+			<main className="flex flex-col flex-1 pb-6 text-[#948172] gap-14">
+				<Main image='/images/main_1.png' />
+				<Message ceoImage='/images/ceo_image.jpg' color='#956f48'>
+					<p>메타리치 컴패니언사업부가</p>
+					<p>더 나은 미래를 향한</p>
+					<p>스무 번째 걸음을 내딛습니다.</p>
+					<br />
+					<p>국내 19개 거점에 이어</p>
+					<p>역동의 중심 송파에 </p>
+					<p>20번째 사무실을 성공적으로 오픈합니다.</p>
+					<br />
+					<p>새로운 공간에서</p>
+					<p>더욱 성장하고 발전할 우리의 여정을</p>
+					<p>함께 축하해 주시면 더없이 기쁘겠습니다.</p>
+					<br />
+					<p>맛있는 음식과 따뜻한 인사</p>
+					<p>그리고 좋은 사람들과의 시간을 기대하며</p>
+					<p>정중히 초대합니다.</p>
+					<br />
+					<p>귀한 걸음 하시어 자리를 빛내 주시길 바랍니다.</p>
+					<br />
+					<p>대표 <span className="text-lg font-bold">김윤성</span> 올림</p>
+				</Message>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+				<Information />
+				<WeddingCalendar WEDDING_DATE={"2025-03-14"} textColor={'#956f48'} />
+				<KakaoMap HALL_LAT={37.48698802179592} HALL_LNG={127.1424851268385}
+					HALL_ADDRESS={"서울특별시 송파구 위례서로 252, 유원플러스빌딩 203호"}
+					HALL_NAME={"서울특별시 송파구 위례서로 252"}
+					PICKER_NAME={"유원플러스빌딩 203호"}
+					PICKER_Y={"-translate-y-12"}
+					PARKING_MESSAGE={"*주차는 개소식 당일 유원플러스 빌딩 항시 무료입니다."}
+					borderColor='#956f48'
+				/>
+			</main>
+
+			{/* 푸터 */}
+			<footer className="bg-gray-800 text-white text-center py-6 text-sm">
+				<p>메타리치 컴패니언사업부 개소식에 초대합니다.</p>
+				<p className="mt-2">뜻깊은 자리를 함께 빛내 주시면 감사하겠습니다.</p>
+			</footer>
+		</div>
+	);
 }
